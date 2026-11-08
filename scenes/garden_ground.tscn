@@ -1,0 +1,20 @@
+[gd_scene format=4]
+
+[ext_resource type="Texture2D" path="res://assets/tiles/garden_tiles.svg" id="1_7hvqa"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nu8qp"]
+texture = ExtResource("1_7hvqa")
+texture_region_size = Vector2i(128, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nofgs"]
+tile_size = Vector2i(128, 64)
+sources/0 = SubResource("TileSetAtlasSource_nu8qp")
+
+[node name="Ground" type="TileMapLayer" unique_id=1415821575]
+position = Vector2(0, 600)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAABAAAAAAAAAAAAAAABAAEAAAACAAAAAAACAAAAAAAAAAAAAAACAAEAAAACAAAAAAADAAAAAAAAAAAAAAADAAEAAAACAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAACAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAACAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAACAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAACAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAACAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_nofgs")

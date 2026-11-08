@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/garden_plot.gd" id="1_plot"]
+[ext_resource type="Texture2D" path="res://assets/garden/plot.svg" id="2_base"]
+[ext_resource type="Texture2D" path="res://assets/garden/sprout.svg" id="3_sprout"]
+[ext_resource type="Texture2D" path="res://assets/garden/growing.svg" id="4_growing"]
+[ext_resource type="Texture2D" path="res://assets/garden/leafy.svg" id="5_leafy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plot"]
+size = Vector2(160, 84)
+
+[node name="GardenPlot" type="Area2D"]
+script = ExtResource("1_plot")
+max_distance = 150.0
+
+[node name="Plot" type="Sprite2D" parent="."]
+texture = ExtResource("2_base")
+
+[node name="Sprout" type="Sprite2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("3_sprout")
+visible = false
+
+[node name="Growing" type="Sprite2D" parent="."]
+position = Vector2(0, -52)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("4_growing")
+visible = false
+
+[node name="Leafy" type="Sprite2D" parent="."]
+position = Vector2(0, -58)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("5_leafy")
+visible = false
+
+[node name="CropIcon" type="Sprite2D" parent="."]
+position = Vector2(0, -86)
+scale = Vector2(0.43, 0.43)
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_plot")

@@ -1,0 +1,398 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scripts/character_selection.gd" id="1_selection"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_character_selection.svg" id="2_background"]
+[ext_resource type="SpriteFrames" path="res://assets/characters/boy_frames.tres" id="3_boy"]
+[ext_resource type="SpriteFrames" path="res://assets/characters/girl_frames.tres" id="4_girl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 0.972549, 0.913725, 0.95)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.18)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boy"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.96)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.18)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boy_hover"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.941176, 0.984314, 0.921569, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.22)
+shadow_size = 10
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_girl"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.96)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.952941, 0.65098, 0.721569, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.18)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_girl_hover"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.952941, 0.968627, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.952941, 0.65098, 0.721569, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.22)
+shadow_size = 10
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.18)
+shadow_size = 6
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_hover"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.407843, 0.65098, 0.45098, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quiet"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_selection")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Veil" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.972549, 0.913725, 0.08)
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -336.0
+offset_right = 520.0
+offset_bottom = 336.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="HeaderPanel" type="PanelContainer" parent="Content"]
+custom_minimum_size = Vector2(0, 104)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_header")
+
+[node name="HeaderBox" type="VBoxContainer" parent="Content/HeaderPanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleLabel" type="Label" parent="Content/HeaderPanel/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_font_sizes/font_size = 38
+text = "Elige tu compañero de aventura"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Content/HeaderPanel/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.65098, 0.45098, 1)
+theme_override_font_sizes/font_size = 18
+text = "Los dos tienen las mismas habilidades. Elige el que más te guste."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="Content"]
+custom_minimum_size = Vector2(0, 402)
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="BoyCard" type="Button" parent="Content/Cards"]
+custom_minimum_size = Vector2(440, 400)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_boy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boy_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boy_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_boy_hover")
+text = ""
+
+[node name="Preview" type="AnimatedSprite2D" parent="Content/Cards/BoyCard"]
+position = Vector2(220, 158)
+scale = Vector2(1.48, 1.48)
+sprite_frames = ExtResource("3_boy")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="NameLabel" type="Label" parent="Content/Cards/BoyCard"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 304.0
+offset_right = 402.0
+offset_bottom = 340.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_font_sizes/font_size = 27
+text = "Niño"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Content/Cards/BoyCard"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 340.0
+offset_right = 402.0
+offset_bottom = 376.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.407843, 0.65098, 0.45098, 1)
+theme_override_font_sizes/font_size = 16
+text = "Valiente y curioso"
+horizontal_alignment = 1
+
+[node name="SelectedBadge" type="PanelContainer" parent="Content/Cards/BoyCard"]
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 54.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_badge")
+
+[node name="BadgeLabel" type="Label" parent="Content/Cards/BoyCard/SelectedBadge"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "ELEGIDO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GirlCard" type="Button" parent="Content/Cards"]
+custom_minimum_size = Vector2(440, 400)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_girl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_girl_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_girl_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_girl_hover")
+text = ""
+
+[node name="Preview" type="AnimatedSprite2D" parent="Content/Cards/GirlCard"]
+position = Vector2(220, 158)
+scale = Vector2(1.48, 1.48)
+sprite_frames = ExtResource("4_girl")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="NameLabel" type="Label" parent="Content/Cards/GirlCard"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 304.0
+offset_right = 402.0
+offset_bottom = 340.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_font_sizes/font_size = 27
+text = "Niña"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Content/Cards/GirlCard"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 340.0
+offset_right = 402.0
+offset_bottom = 376.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.560784, 0.65098, 1)
+theme_override_font_sizes/font_size = 16
+text = "Alegre y aventurera"
+horizontal_alignment = 1
+
+[node name="SelectedBadge" type="PanelContainer" parent="Content/Cards/GirlCard"]
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 54.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_badge")
+
+[node name="BadgeLabel" type="Label" parent="Content/Cards/GirlCard/SelectedBadge"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "ELEGIDO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmationLabel" type="Label" parent="Content"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_font_sizes/font_size = 18
+text = "Elige un personaje para comenzar."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Content"]
+custom_minimum_size = Vector2(380, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.8, 0.85, 0.8, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_primary")
+theme_override_styles/hover = SubResource("StyleBoxFlat_primary_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_primary_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_primary_hover")
+text = "Comenzar aventura"
+
+[node name="CancelButton" type="Button" parent="Content"]
+visible = false
+custom_minimum_size = Vector2(260, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_colors/font_hover_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_colors/font_pressed_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_quiet")
+theme_override_styles/hover = SubResource("StyleBoxFlat_quiet")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quiet")
+theme_override_styles/focus = SubResource("StyleBoxFlat_quiet")
+text = "Cancelar y volver"

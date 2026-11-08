@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/nina_idle_1.svg" id="1_nina_idle_1_svg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nina_idle_2.svg" id="2_nina_idle_2_svg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nina_walk_1.svg" id="3_nina_walk_1_svg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nina_walk_2.svg" id="4_nina_walk_2_svg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nina_walk_3.svg" id="5_nina_walk_3_svg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nina_walk_4.svg" id="6_nina_walk_4_svg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nina_walk_1.svg" id="7_nina_walk_1_svg"]
+
+[resource]
+animations = [{
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("1_nina_idle_1_svg")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("2_nina_idle_2_svg")
+}
+],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("7_nina_walk_1_svg")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("4_nina_walk_2_svg")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("5_nina_walk_3_svg")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("6_nina_walk_4_svg")
+}
+],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("7_nina_walk_1_svg")
+}
+],
+"loop": false,
+"name": &"jump",
+"speed": 1.0
+}]

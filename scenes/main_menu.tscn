@@ -1,0 +1,360 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_main_menu.svg" id="2_background"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_garden.svg" id="3_garden"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_food.svg" id="4_food"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_kitchen.svg" id="5_kitchen"]
+[ext_resource type="SpriteFrames" path="res://assets/characters/boy_frames.tres" id="6_boy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_garden"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.662745, 0.85098, 0.603922, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.22)
+shadow_size = 8
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_garden_hover"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.74902, 0.901961, 0.686275, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.309804, 0.541176, 0.356863, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.26)
+shadow_size = 10
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_food"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.964706, 0.752941, 0.541176, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.784314, 0.466667, 0.219608, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.22)
+shadow_size = 8
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_food_hover"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.827451, 0.658824, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.784314, 0.466667, 0.219608, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.26)
+shadow_size = 10
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kitchen"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.886275, 0.603922, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.788235, 0.603922, 0.180392, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.22)
+shadow_size = 8
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kitchen_hover"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.941176, 0.752941, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.788235, 0.603922, 0.180392, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.152941, 0.25098, 0.176471, 0.26)
+shadow_size = 10
+shadow_offset = Vector2(0, 6)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 0.0
+offset_top = 48.0
+offset_right = 0.0
+offset_bottom = 218.0
+grow_horizontal = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(1, 0.972549, 0.913725, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 54
+text = "AVENTURA NUTRICIONAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.466667, 0.219608, 1)
+theme_override_colors/font_outline_color = Color(1, 0.972549, 0.913725, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 22
+text = "Aprende, descubre y disfruta"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -76.0
+offset_right = 534.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="GardenButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(340, 170)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_garden")
+theme_override_styles/hover = SubResource("StyleBoxFlat_garden_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_garden_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_garden_hover")
+tooltip_text = "Mi huerto"
+text = ""
+
+[node name="Icon" type="TextureRect" parent="Menu/GardenButton"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 33.0
+offset_right = 120.0
+offset_bottom = 129.0
+mouse_filter = 2
+texture = ExtResource("3_garden")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Menu/GardenButton"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 44.0
+offset_right = 320.0
+offset_bottom = 82.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_font_sizes/font_size = 26
+text = "Mi huerto"
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="Menu/GardenButton"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 86.0
+offset_right = 320.0
+offset_bottom = 124.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.266667, 0.396078, 0.286275, 1)
+theme_override_font_sizes/font_size = 14
+text = "Siembra, riega y cosecha"
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="FoodButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(340, 170)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_food")
+theme_override_styles/hover = SubResource("StyleBoxFlat_food_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_food_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_food_hover")
+tooltip_text = "Mundo de alimentos"
+text = ""
+
+[node name="Icon" type="TextureRect" parent="Menu/FoodButton"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 33.0
+offset_right = 120.0
+offset_bottom = 129.0
+mouse_filter = 2
+texture = ExtResource("4_food")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Menu/FoodButton"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 78.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.380392, 0.211765, 0.0862745, 1)
+theme_override_font_sizes/font_size = 25
+text = "Mundo de alimentos"
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="Menu/FoodButton"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 86.0
+offset_right = 320.0
+offset_bottom = 124.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.454902, 0.286275, 0.145098, 1)
+theme_override_font_sizes/font_size = 14
+text = "Frutas, verduras y mercado"
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="KitchenButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(340, 170)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kitchen")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kitchen_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kitchen_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_kitchen_hover")
+tooltip_text = "Cocina saludable"
+text = ""
+
+[node name="Icon" type="TextureRect" parent="Menu/KitchenButton"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 33.0
+offset_right = 120.0
+offset_bottom = 129.0
+mouse_filter = 2
+texture = ExtResource("5_kitchen")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Menu/KitchenButton"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 44.0
+offset_right = 320.0
+offset_bottom = 82.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.380392, 0.286275, 0.0862745, 1)
+theme_override_font_sizes/font_size = 25
+text = "Cocina saludable"
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="Menu/KitchenButton"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 86.0
+offset_right = 320.0
+offset_bottom = 124.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.454902, 0.376471, 0.160784, 1)
+theme_override_font_sizes/font_size = 14
+text = "Prepara una receta"
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="CharacterPreview" type="AnimatedSprite2D" parent="."]
+position = Vector2(92, 612)
+scale = Vector2(1.05, 1.05)
+sprite_frames = ExtResource("6_boy")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="HintLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -48.0
+offset_right = 0.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.184314, 0.376471, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(1, 0.972549, 0.913725, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 16
+text = "Toca una tarjeta para comenzar"
+horizontal_alignment = 1
